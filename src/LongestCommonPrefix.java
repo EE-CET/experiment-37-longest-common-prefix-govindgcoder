@@ -15,10 +15,11 @@ public class LongestCommonPrefix {
         // Iterate through the rest, shortening the 'prefix' until it matches the start of the current string.
         String prefix = arr[0];
         for(int i=1;i<N;i++){
-            while(!arr[i].startsWith(prefix)){ prefix=prefix.substring(0, prefix.length()-2);
-            if(prefix=="") {System.out.print("-1"); return;}
+            while(!arr[i].startsWith(prefix)){ prefix=prefix.substring(0, prefix.length()-1);
+            if(prefix.isEmpty()) {System.out.print("-1"); return;}
             }
         }
+        if(prefix.isEmpty()) {System.out.print("-1"); return;}
         System.out.print(prefix);
         // TODO: If prefix is empty, print "-1", otherwise print the prefix.
     }
